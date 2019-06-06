@@ -1,0 +1,223 @@
+@keyframes rotateArms {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: aquamarine;
+}
+.clock {
+  width: 200px;
+  height: 200px;
+  box-shadow: 0px 0px 0px 10px #222;
+  border-radius: 200px;
+  position: relative;
+  background-color: aliceblue;
+}
+
+.center,
+.min-lines > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.knob {
+  width: 13.33333px;
+  height: 13.33333px;
+  background: #111;
+  border-radius: 13.33333px;
+  z-index: 4;
+}
+.arm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left 0;
+  z-index: 2;
+  width: 0;
+  animation: rotateArms linear 60s infinite;
+}
+
+.minute.arm {
+  height: 76.92308px;
+  box-shadow: 0 0 0 2px #444;
+  animation-duration: 3600s;
+}
+
+.hour.arm {
+  height: 55.55556px;
+  box-shadow: 0 0 0 3.33333px #333;
+  animation-duration: 43200s;
+}
+
+.second.arm {
+  height: 90.90909px;
+  box-shadow: 0 0 0 1.33333px #a00;
+}
+.box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.min-lines > .min0 {
+  transform: rotate(0deg);
+}
+.min-lines > .min1 {
+  transform: rotate(6deg);
+}
+.min-lines > .min2 {
+  transform: rotate(12deg);
+}
+.min-lines > .min3 {
+  transform: rotate(18deg);
+}
+.min-lines > .min4 {
+  transform: rotate(24deg);
+}
+.min-lines > .min5 {
+  transform: rotate(30deg);
+}
+.min-lines > .min6 {
+  transform: rotate(36deg);
+}
+.min-lines > .min7 {
+  transform: rotate(42deg);
+}
+.min-lines > .min8 {
+  transform: rotate(48deg);
+}
+.min-lines > .min9 {
+  transform: rotate(54deg);
+}
+.min-lines > .min10 {
+  transform: rotate(60deg);
+}
+.min-lines > .min11 {
+  transform: rotate(66deg);
+}
+.min-lines > .min12 {
+  transform: rotate(72deg);
+}
+.min-lines > .min13 {
+  transform: rotate(78deg);
+}
+.min-lines > .min14 {
+  transform: rotate(84deg);
+}
+.min-lines > .min15 {
+  transform: rotate(90deg);
+}
+.min-lines > .min16 {
+  transform: rotate(96deg);
+}
+.min-lines > .min17 {
+  transform: rotate(102deg);
+}
+.min-lines > .min18 {
+  transform: rotate(108deg);
+}
+.min-lines > .min19 {
+  transform: rotate(114deg);
+}
+.min-lines > .min-20 {
+  transform: rotate(120deg);
+}
+
+.min-lines > .min-21 {
+  transform: rotate(126deg);
+}
+
+.min-lines > .min-22 {
+  transform: rotate(132deg);
+}
+
+.min-lines > .min-23 {
+  transform: rotate(138deg);
+}
+
+.min-lines > .min-24 {
+  transform: rotate(144deg);
+}
+
+.min-lines > .min-25 {
+  transform: rotate(150deg);
+}
+
+.min-lines > .min-26 {
+  transform: rotate(156deg);
+}
+
+.min-lines > .min-27 {
+  transform: rotate(162deg);
+}
+
+.min-lines > .min-28 {
+  transform: rotate(168deg);
+}
+
+.min-lines > .min-29 {
+  transform: rotate(174deg);
+}
+.min-lines {
+  width: 100%;
+  height: 100%;
+}
+
+/* psuedo classes and elements */
+.min-lines > div::before,
+.min-lines > div::after {
+  content: "";
+  position: absolute;
+  width: 0px;
+  height: 5px;
+  top: 88.88889px;
+  box-shadow: 0px 0px 0px 0.5px #000;
+}
+
+.min-lines > div::after {
+  bottom: 88.88889px;
+  top: auto;
+}
+
+div.long::before,
+div.long::after {
+  height: 9.09091px;
+  top: 84.4773px;
+}
+
+div.long::after {
+  bottom: 84.4773px;
+  top: auto;
+}
+
+div.dark::before,
+div.dark::after {
+  box-shadow: 0px 0px 0px 1px #000;
+}
+
+.ampm {
+  width: 2em;
+  margin-left: 0.2em;
+  text-align: center;
+}
+
+#time {
+  text-align: center;
+  color: #000;
+  float: left;
+  margin: 1.5em;
+  font-weight: bold;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: row;
+}
+#;
