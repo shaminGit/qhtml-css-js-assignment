@@ -1,72 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="author" content="Shamin Ali (shaminali14@gmail.com)" />
-    <meta
-      name="description"
-      content="Analog2Digital clock developed using CSS and HTML and JavaScript"
-    />
-    <link rel="icon" type="image/png" href="./icons/icon.png" />
-    <link rel="stylesheet" href="./css/style.css" />
 
-    <title>Analog2Digital</title>
-  </head>
-  <body>
-    <div id="time">
-      <input type="button" value="Switch" />
-      <input class="ampm" id="h" type="text" />:
-      <input class="ampm" id="m" type="text" />:
-      <input class="ampm" id="s" type="text" />:
-      <input class="ampm" id="_ampm" type="text" />
-    </div>
-    <div class="clock center">
-      <div class="knob center"></div>
-      <div class="box seconds">
-        <div class="arm second"></div>
-      </div>
-      <div class="box minutes">
-        <div class="arm minute"></div>
-      </div>
-      <div class="box hours">
-        <div class="arm hour"></div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="author" content="Shamin Ali (shaminali14@gmail.com)" />
+  <meta name="description" content="Analog2Digital clock developed using CSS and HTML and JavaScript" />
+  <link rel="icon" type="image/png" href="./icons/icon.png" />
+  <link rel="stylesheet" href="./css/style.css" />
 
-      <div class="min-lines">
-        <div class="min0 long dark"></div>
-        <div class="min1"></div>
-        <div class="min2"></div>
-        <div class="min3"></div>
-        <div class="min4"></div>
-        <div class="min5"></div>
-        <div class="min6"></div>
-        <div class="min7"></div>
-        <div class="min8"></div>
-        <div class="min9"></div>
-        <div class="min10"></div>
-        <div class="min11"></div>
-        <div class="min12"></div>
-        <div class="min13"></div>
-        <div class="min14"></div>
-        <div class="min15"></div>
-        <div class="min16"></div>
-        <div class="min17"></div>
-        <div class="min18"></div>
-        <div class="min19"></div>
-        <div class="min20"></div>
-        <div class="min21"></div>
-        <div class="min22"></div>
-        <div class="min23"></div>
-        <div class="min24"></div>
-        <div class="min25"></div>
-        <div class="min26"></div>
-        <div class="min27"></div>
-        <div class="min28"></div>
-        <div class="min29"></div>
-      </div>
+  <title>Analog2Digital</title>
+</head>
+
+<body onload="hideDigital()">
+  <div class="time">
+    <input class=button type="button" value="Clock" />
+    <div class="show" id="h1" type="textfield"></div>:
+    <div class="show" id="m1" type="textfield"></div>:
+    <div class="show" id="s1" type="texfield"></div>:
+    <div class="show" id="ampm1" type="textfield"></div>
+    <input id="topRight" type="button" onclick="pauseAudio()" value="Snooze..">
+  </div>
+  <div class="time">
+    <input class=button type="button" value="Set Alarm" onclick="getAlarm()" />
+    <input class="show" id="hh" type="text" placeholder="hh" />:
+    <input class="show" id="mm" type="text" placeholder="mm" />:
+    <input class="show" id="ss" type="text" placeholder="ss" />:
+    <input class="show" id="ampm" type="text" placeholder="ampm" />
+    <input id="topRight" type="button" onclick="switchClock()" value="Switch Clock" />
+
+    <div id="digital">
+      <div class="show" id="hd" type="textfield"></div>:
+      <div class="show" id="md" type="textfield"></div>:
+      <div class="show" id="sd" type="texfield"></div>:
+      <div class="show" id="ampmd" type="textfield"></div>
     </div>
-    <script src="./js/script.js"></script>
-  </body>
+  </div>
+
+  <div class="time">
+    <div id="txt">Time Left /S:</div>
+    <div id="counter" type="text" placeholder="Run Counter"></div>
+
+  </div>
+  <div class="time">
+    <input class="button" id="" type="button" value="Switch Format" onclick="switchFormat();">
+  </div>
+  <div class="clock center">
+    <div class="knob center"></div>
+    <div class="box seconds">
+      <div class="arm second"></div>
+    </div>
+    <div class="box minutes">
+      <div class="arm minute"></div>
+    </div>
+    <div class="box hours">
+      <div class="arm hour"></div>
+    </div>
+
+    <div class="min-lines">
+      <div class="min0 long dark"></div>
+      <div class="min1"></div>
+      <div class="min2"></div>
+      <div class="min3"></div>
+      <div class="min4"></div>
+      <div class="min5"></div>
+      <div class="min6"></div>
+      <div class="min7"></div>
+      <div class="min8"></div>
+      <div class="min9"></div>
+      <div class="min10"></div>
+      <div class="min11"></div>
+      <div class="min12"></div>
+      <div class="min13"></div>
+      <div class="min14"></div>
+      <div class="min15"></div>
+      <div class="min16"></div>
+      <div class="min17"></div>
+      <div class="min18"></div>
+      <div class="min19"></div>
+      <div class="min20"></div>
+      <div class="min21"></div>
+      <div class="min22"></div>
+      <div class="min23"></div>
+      <div class="min24"></div>
+      <div class="min25"></div>
+      <div class="min26"></div>
+      <div class="min27"></div>
+      <div class="min28"></div>
+      <div class="min29"></div>
+    </div>
+  </div>
+  <div class="time" id="ring">
+    <img src="image/alarmclock_final.gif" alt="No animation support">
+  </div>
+
+
+  <audio id="alarm">
+    <source src="./audio/audio.ogg" type="audio/ogg">
+    Your browser does not support the audio element.
+  </audio>
+
+
+  <script src="./js/script.js"></script>
+</body>
+
 </html>
